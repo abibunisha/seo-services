@@ -3,226 +3,884 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abibunisha S | Professional SEO Services Company</title>
-
-<meta name="description" content="Professional SEO services company offering website SEO services, LinkedIn SEO services, technical SEO, keyword research and growth-focused SEO services for businesses.">
-<meta name="keywords" content="SEO services, website SEO services, LinkedIn SEO services, professional SEO services company">
-<meta name="author" content="Abibunisha S">
-
+<title>Abibunisha | SEO Strategist & Organic Growth Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-body { font-family: 'Inter', sans-serif; }
-.gradient-text {
-  background: linear-gradient(to right, #6366f1, #06b6d4);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  :root {
+    --sand: #f7f3ee;
+    --sand-dark: #ede8e0;
+    --warm-brown: #5c3d2e;
+    --terracotta: #c4622d;
+    --terracotta-light: #e07a50;
+    --sage: #6b8f71;
+    --sage-light: #a8c5ad;
+    --cream: #fdf9f4;
+    --text-dark: #2c1f14;
+    --text-mid: #6b5744;
+    --text-muted: #9e8a78;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 { font-family: 'Lora', serif; }
+
+  /* ---- NOISE TEXTURE ---- */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 128px;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+  }
+  nav.scrolled {
+    background: rgba(253,249,244,0.94);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(92,61,46,0.08), 0 4px 20px rgba(92,61,46,0.06);
+    padding: 14px 0;
+  }
+  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Lora', serif; font-weight: 700; font-size: 20px; color: var(--text-dark); letter-spacing: -0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--terracotta); }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nl { color: var(--text-mid); font-size: 14px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .nl:hover { color: var(--terracotta); }
+  .nav-cta {
+    font-size: 14px; font-weight: 600; padding: 10px 22px;
+    border-radius: 50px; background: var(--terracotta); color: white;
+    text-decoration: none; transition: all 0.3s;
+    box-shadow: 0 2px 12px rgba(196,98,45,0.3);
+  }
+  .nav-cta:hover { background: var(--warm-brown); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(196,98,45,0.35); }
+
+  /* ---- BUTTONS ---- */
+  .btn-terra {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--terracotta); color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 15px;
+    padding: 15px 30px; border-radius: 50px; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(196,98,45,0.35);
+    transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .btn-terra:hover { background: var(--warm-brown); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(196,98,45,0.4); }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: transparent; color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 15px;
+    padding: 14px 30px; border-radius: 50px; text-decoration: none;
+    border: 1.5px solid rgba(92,61,46,0.25); transition: all 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--terracotta); color: var(--terracotta); transform: translateY(-2px); }
+
+  .btn-sage {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--sage); color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 14px;
+    padding: 12px 24px; border-radius: 50px; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-sage:hover { background: #567a5c; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(107,143,113,0.35); }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--cream);
+    padding: 130px 0 80px;
+    position: relative; overflow: hidden;
+  }
+
+  /* Warm blob */
+  .blob {
+    position: absolute; border-radius: 50%; filter: blur(70px); pointer-events: none;
+    animation: blob-drift 10s ease-in-out infinite alternate;
+  }
+  @keyframes blob-drift {
+    from { transform: translate(0, 0) scale(1); }
+    to   { transform: translate(30px, -20px) scale(1.08); }
+  }
+
+  /* ---- SECTION TAG ---- */
+  .stag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(196,98,45,0.08); color: var(--terracotta);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 50px;
+    border: 1px solid rgba(196,98,45,0.2); margin-bottom: 14px;
+  }
+
+  .stag-sage {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(107,143,113,0.1); color: var(--sage);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 6px 16px; border-radius: 50px;
+    border: 1px solid rgba(107,143,113,0.2); margin-bottom: 14px;
+  }
+
+  /* ---- CARD BASE ---- */
+  .wcard {
+    background: white;
+    border: 1px solid rgba(92,61,46,0.08);
+    border-radius: 20px;
+    padding: 28px;
+    transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+    overflow: hidden;
+  }
+  .wcard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 56px rgba(92,61,46,0.1);
+    border-color: rgba(196,98,45,0.2);
+  }
+
+  /* Hover accent line */
+  .wcard::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+  .wcard:hover::after { transform: scaleX(1); }
+
+  /* ---- ICON BOX ---- */
+  .ibox {
+    width: 50px; height: 50px; border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 18px; flex-shrink: 0;
+    transition: all 0.3s;
+  }
+  .ibox-terra { background: rgba(196,98,45,0.1); }
+  .ibox-sage  { background: rgba(107,143,113,0.12); }
+  .wcard:hover .ibox-terra { background: var(--terracotta); }
+  .wcard:hover .ibox-sage  { background: var(--sage); }
+  .wcard:hover .ibox-terra svg, .wcard:hover .ibox-sage svg { stroke: white !important; }
+
+  /* ---- CHIP ---- */
+  .chip {
+    display: inline-block; font-size: 11px; font-weight: 600;
+    padding: 3px 10px; border-radius: 50px; margin: 2px;
+  }
+  .chip-terra { background: rgba(196,98,45,0.08); color: var(--terracotta); border: 1px solid rgba(196,98,45,0.18); }
+  .chip-sage  { background: rgba(107,143,113,0.1); color: var(--sage); border: 1px solid rgba(107,143,113,0.2); }
+
+  /* ---- AVATAR RING ---- */
+  .avatar-ring {
+    width: 88px; height: 88px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--terracotta), var(--terracotta-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Lora', serif; font-size: 2rem; font-weight: 700; color: white;
+    box-shadow: 0 8px 32px rgba(196,98,45,0.3);
+    flex-shrink: 0;
+  }
+
+  /* ---- REVEAL ---- */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ---- STAT ---- */
+  .stat-n {
+    font-family: 'Lora', serif; font-weight: 700;
+    font-size: 2.6rem; line-height: 1; color: var(--terracotta);
+  }
+
+  /* ---- PROCESS PILL ---- */
+  .pill-step {
+    display: flex; gap: 18px; align-items: flex-start;
+    background: white; border: 1px solid rgba(92,61,46,0.08);
+    border-radius: 16px; padding: 22px;
+    transition: all 0.3s;
+  }
+  .pill-step:hover { box-shadow: 0 10px 36px rgba(92,61,46,0.09); border-color: rgba(196,98,45,0.2); }
+
+  .step-badge {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(196,98,45,0.1); color: var(--terracotta);
+    font-family: 'Lora', serif; font-weight: 700; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: all 0.3s;
+  }
+  .pill-step:hover .step-badge { background: var(--terracotta); color: white; }
+
+  /* ---- LIST ROW ---- */
+  .lrow {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    background: var(--sand); transition: background 0.2s;
+    font-size: 13px; color: var(--text-mid); font-weight: 500;
+  }
+  .lrow:hover { background: var(--sand-dark); }
+  .ldot { width: 6px; height: 6px; border-radius: 50%; background: var(--terracotta); flex-shrink: 0; }
+  .ldot-sage { background: var(--sage); }
+
+  /* ---- DIVIDER ---- */
+  .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(92,61,46,0.12), transparent); }
+
+  /* ---- QUOTE CARD ---- */
+  .qcard {
+    background: white; border: 1px solid rgba(92,61,46,0.08);
+    border-radius: 20px; padding: 28px;
+    transition: all 0.3s;
+    position: relative;
+  }
+  .qcard::before {
+    content: '\201C';
+    position: absolute; top: 16px; left: 22px;
+    font-family: 'Lora', serif; font-size: 4rem; line-height: 1;
+    color: rgba(196,98,45,0.15); font-weight: 700;
+  }
+  .qcard:hover { box-shadow: 0 14px 48px rgba(92,61,46,0.1); transform: translateY(-4px); border-color: rgba(196,98,45,0.15); }
+
+  /* ---- CTA ---- */
+  .cta-section {
+    background: linear-gradient(145deg, #3b1f0e 0%, #5c3d2e 50%, #3d2410 100%);
+    position: relative; overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(196,98,45,0.25) 0%, transparent 70%);
+    top: -150px; right: -50px; pointer-events: none;
+    animation: blob-drift 7s ease-in-out infinite alternate;
+  }
+  .cta-section::after {
+    content: '';
+    position: absolute; width: 350px; height: 350px;
+    background: radial-gradient(circle, rgba(224,122,80,0.15) 0%, transparent 70%);
+    bottom: -80px; left: 8%;
+    animation: blob-drift 9s ease-in-out infinite alternate-reverse;
+    pointer-events: none;
+  }
+
+  /* ---- TOOL PILL ---- */
+  .tpill {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 1px solid rgba(92,61,46,0.1);
+    color: var(--text-mid); font-size: 13px; font-weight: 500;
+    padding: 9px 18px; border-radius: 50px;
+    transition: all 0.25s;
+    box-shadow: 0 2px 8px rgba(92,61,46,0.04);
+  }
+  .tpill:hover { border-color: var(--terracotta); color: var(--terracotta); box-shadow: 0 4px 16px rgba(196,98,45,0.12); transform: translateY(-2px); }
+
+  /* ---- BADGE ---- */
+  .avail {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(107,143,113,0.1); color: var(--sage);
+    font-size: 13px; font-weight: 600; padding: 7px 16px;
+    border-radius: 50px; border: 1px solid rgba(107,143,113,0.25);
+  }
+  .avail-dot {
+    width: 7px; height: 7px; border-radius: 50%; background: var(--sage);
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+  /* ---- WAVY DIVIDER ---- */
+  .wavy { line-height: 0; }
+  .wavy svg { display: block; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-grid { grid-template-columns: 1fr !important; }
+    .two-col { grid-template-columns: 1fr !important; }
+    .three-col { grid-template-columns: 1fr !important; }
+    .four-col { grid-template-columns: 1fr 1fr !important; }
+  }
 </style>
-
 </head>
+<body>
 
-<body class="bg-gray-950 text-gray-200">
-
-<!-- Navbar -->
-<header class="fixed w-full bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-800">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold gradient-text">SEO Services</h1>
-    <a href="https://www.linkedin.com/in/abibunisha-s-5b3796310/" target="_blank" 
-       class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-lg text-sm font-medium transition">
-       Contact
-    </a>
+<!-- ======= NAV ======= -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Abibunisha<span>.</span></a>
+    <div class="nav-links">
+      <a href="#services" class="nl">Services</a>
+      <a href="#process" class="nl">Process</a>
+      <a href="#stories" class="nl">Stories</a>
+      <a href="#contact" class="nl">Contact</a>
+      <a href="#contact" class="nav-cta">Free Audit →</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<!-- Hero -->
-<section class="pt-32 pb-24 text-center px-6">
-  <div class="max-w-4xl mx-auto">
-    <h2 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-      Scalable <span class="gradient-text">SEO Services</span> That Drive Growth
-    </h2>
-    <p class="text-lg text-gray-400 mb-8">
-      Professional SEO services company delivering website SEO services, LinkedIn SEO services, 
-      and advanced technical SEO services to increase rankings and organic traffic.
-    </p>
-    <a href="https://www.linkedin.com/in/abibunisha-s-5b3796310/" target="_blank"
-       class="bg-indigo-600 hover:bg-indigo-500 px-8 py-4 rounded-xl font-semibold text-lg transition shadow-lg">
-       Get SEO Services
-    </a>
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <!-- Warm blobs -->
+  <div class="blob" style="width:480px;height:480px;background:rgba(196,98,45,0.07);top:-120px;right:-100px;animation-delay:0s;"></div>
+  <div class="blob" style="width:320px;height:320px;background:rgba(107,143,113,0.07);bottom:-60px;left:-80px;animation-delay:3s;"></div>
+  <div class="blob" style="width:200px;height:200px;background:rgba(196,98,45,0.05);top:50%;left:40%;animation-delay:5s;"></div>
+
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:1;">
+
+    <!-- Intro row -->
+    <div style="display:flex;align-items:center;gap:20px;margin-bottom:44px;" class="a1">
+      <div class="avatar-ring">A</div>
+      <div>
+        <div class="avail" style="margin-bottom:8px;">
+          <div class="avail-dot"></div>
+          Open to new projects
+        </div>
+        <div style="font-size:14px;color:var(--text-muted);font-weight:500;">Abibunisha · SEO Strategist & Organic Growth Expert</div>
+      </div>
+    </div>
+
+    <div class="hero-grid" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:start;">
+
+      <!-- Left: copy -->
+      <div>
+        <h1 style="font-size:clamp(2.6rem,5vw,4rem);font-weight:700;line-height:1.12;letter-spacing:-0.025em;color:var(--text-dark);margin-bottom:22px;" class="a2">
+          I help businesses<br>
+          <em style="color:var(--terracotta);font-style:italic;">grow organically</em><br>
+          through smart SEO.
+        </h1>
+        <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.8;max-width:480px;margin-bottom:32px;font-weight:400;" class="a3">
+          No black-hat tricks. No vanity metrics. Just thoughtful, research-driven SEO that builds lasting visibility — and real revenue — for your business.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;" class="a4">
+          <a href="#contact" class="btn-terra">
+            Get a Free SEO Audit
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn-outline">See What I Do</a>
+        </div>
+        <!-- Trust row -->
+        <div style="display:flex;flex-wrap:wrap;gap:20px;" class="a5">
+          <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text-muted);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            100% White-Hat
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text-muted);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Monthly Reports
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;font-size:13px;color:var(--text-muted);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            No Lock-in Contracts
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: warm stat cards -->
+      <div style="display:flex;flex-direction:column;gap:14px;" class="a3">
+
+        <!-- Big stat -->
+        <div class="wcard" style="background:linear-gradient(135deg,var(--terracotta),var(--terracotta-light));border:none;color:white;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.65);margin-bottom:10px;font-weight:600;">Avg. Organic Traffic Growth</div>
+          <div style="font-family:'Lora',serif;font-size:3.2rem;font-weight:700;line-height:1;margin-bottom:6px;">+312%</div>
+          <div style="font-size:13px;color:rgba(255,255,255,0.75);">across client websites in 6 months</div>
+          <!-- Mini bars -->
+          <div style="display:flex;align-items:flex-end;gap:5px;margin-top:18px;height:36px;">
+            <div style="flex:1;background:rgba(255,255,255,0.2);border-radius:4px;height:20%;"></div>
+            <div style="flex:1;background:rgba(255,255,255,0.28);border-radius:4px;height:32%;"></div>
+            <div style="flex:1;background:rgba(255,255,255,0.36);border-radius:4px;height:48%;"></div>
+            <div style="flex:1;background:rgba(255,255,255,0.44);border-radius:4px;height:42%;"></div>
+            <div style="flex:1;background:rgba(255,255,255,0.55);border-radius:4px;height:65%;"></div>
+            <div style="flex:1;background:rgba(255,255,255,0.7);border-radius:4px;height:82%;"></div>
+            <div style="flex:1;background:white;border-radius:4px;height:100%;"></div>
+          </div>
+        </div>
+
+        <!-- Two small -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+          <div class="wcard" style="text-align:center;padding:22px 16px;">
+            <div class="stat-n">50+</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:5px;font-weight:500;">Sites Ranked</div>
+          </div>
+          <div class="wcard" style="text-align:center;padding:22px 16px;">
+            <div class="stat-n" style="color:var(--sage);">98%</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:5px;font-weight:500;">Satisfaction Rate</div>
+          </div>
+        </div>
+
+        <!-- Keywords card -->
+        <div class="wcard" style="display:flex;align-items:center;gap:16px;padding:18px 22px;">
+          <div class="ibox ibox-sage" style="margin-bottom:0;width:42px;height:42px;border-radius:11px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          </div>
+          <div>
+            <div style="font-family:'Lora',serif;font-size:1.4rem;font-weight:700;color:var(--text-dark);line-height:1;">Page 1 Rankings</div>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:3px;">for 80%+ of target keywords</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Features -->
-<section class="py-20 bg-gray-900 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-12">Our SEO Services Expertise</h2>
-    <div class="grid md:grid-cols-3 gap-8">
+<!-- wavy -->
+<div class="wavy" style="background:var(--cream);">
+  <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:40px;display:block;">
+    <path d="M0,20 C240,40 480,0 720,20 C960,40 1200,0 1440,20 L1440,40 L0,40 Z" fill="var(--sand)"/>
+  </svg>
+</div>
 
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-semibold mb-4">Website SEO Services</h3>
-        <p class="text-gray-400">
-          Complete on-page SEO services, technical SEO audits, and optimization strategies 
-          to improve search engine rankings.
-        </p>
+<!-- ======= STATS BAR ======= -->
+<section style="background:var(--sand);padding:0;" class="reveal">
+  <div style="max-width:1100px;margin:0 auto;padding:36px 28px;">
+    <div class="four-col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+      <div style="text-align:center;padding:20px;border-right:1px solid rgba(92,61,46,0.1);">
+        <div class="stat-n">4+</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;">Years Experience</div>
+      </div>
+      <div style="text-align:center;padding:20px;border-right:1px solid rgba(92,61,46,0.1);">
+        <div class="stat-n">30+</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;">Happy Clients</div>
+      </div>
+      <div style="text-align:center;padding:20px;border-right:1px solid rgba(92,61,46,0.1);">
+        <div class="stat-n" style="color:var(--sage);">3×</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;">Avg. Traffic Lift</div>
+      </div>
+      <div style="text-align:center;padding:20px;">
+        <div class="stat-n" style="color:var(--sage);">50+</div>
+        <div style="font-size:12px;color:var(--text-muted);margin-top:4px;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;">Sites Ranked</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wavy" style="background:var(--sand);">
+  <svg viewBox="0 0 1440 40" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:40px;display:block;">
+    <path d="M0,20 C240,0 480,40 720,20 C960,0 1200,40 1440,20 L1440,40 L0,40 Z" fill="var(--cream)"/>
+  </svg>
+</div>
+
+<!-- ======= SERVICES ======= -->
+<section id="services" style="background:var(--cream);padding:80px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;">
+
+    <div class="reveal" style="margin-bottom:52px;max-width:560px;">
+      <div class="stag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        What I Offer
+      </div>
+      <h2 style="font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:700;color:var(--text-dark);letter-spacing:-0.02em;margin-bottom:12px;">
+        Every service designed to<br><em style="color:var(--terracotta);">move the needle.</em>
+      </h2>
+      <p style="color:var(--text-mid);line-height:1.75;font-weight:400;">From deep technical fixes to content that converts — I cover the full SEO spectrum so you don't have to juggle multiple freelancers.</p>
+    </div>
+
+    <!-- 2×2 grid -->
+    <div class="two-col" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;">
+
+      <!-- Technical SEO -->
+      <div class="wcard reveal" style="transition-delay:0.04s;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="ibox ibox-terra">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Technical SEO</h3>
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Building the solid foundation search engines need to crawl, index and reward your site.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+          <span class="chip chip-terra">Site Audit</span>
+          <span class="chip chip-terra">Core Web Vitals</span>
+          <span class="chip chip-terra">Schema Markup</span>
+          <span class="chip chip-terra">Speed</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="lrow"><div class="ldot"></div>Crawl error fixes</div>
+          <div class="lrow"><div class="ldot"></div>Page speed boost</div>
+          <div class="lrow"><div class="ldot"></div>Sitemap & robots</div>
+          <div class="lrow"><div class="ldot"></div>Structured data</div>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-semibold mb-4">LinkedIn SEO Services</h3>
-        <p class="text-gray-400">
-          Professional profile optimization and keyword positioning for improved LinkedIn visibility.
-        </p>
+      <!-- On-Page & Content -->
+      <div class="wcard reveal" style="transition-delay:0.08s;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="ibox ibox-sage">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">On-Page & Content SEO</h3>
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Content that speaks to your audience's intent — and convinces Google you deserve the top spot.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+          <span class="chip chip-sage">Keyword Research</span>
+          <span class="chip chip-sage">Content Strategy</span>
+          <span class="chip chip-sage">Meta Optimization</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="lrow"><div class="ldot ldot-sage"></div>Intent mapping</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>Title & meta tags</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>Content gaps</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>Internal linking</div>
+        </div>
       </div>
 
-      <div class="bg-gray-800 p-8 rounded-2xl shadow-lg hover:scale-105 transition">
-        <h3 class="text-xl font-semibold mb-4">Technical SEO Services</h3>
-        <p class="text-gray-400">
-          Core Web Vitals, site structure optimization, indexing fixes, and SEO performance tracking.
+      <!-- Link Building -->
+      <div class="wcard reveal" style="transition-delay:0.12s;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="ibox ibox-terra">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Link Building & Off-Page</h3>
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Earning high-quality backlinks that build your site's authority — the right way, for lasting results.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+          <span class="chip chip-terra">White-Hat</span>
+          <span class="chip chip-terra">Guest Posts</span>
+          <span class="chip chip-terra">DR 50+</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="lrow"><div class="ldot"></div>High-DA outreach</div>
+          <div class="lrow"><div class="ldot"></div>Guest blogging</div>
+          <div class="lrow"><div class="ldot"></div>Toxic link disavow</div>
+          <div class="lrow"><div class="ldot"></div>Brand mentions</div>
+        </div>
+      </div>
+
+      <!-- Local SEO -->
+      <div class="wcard reveal" style="transition-delay:0.16s;">
+        <div style="display:flex;align-items:flex-start;gap:16px;">
+          <div class="ibox ibox-sage">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Local SEO</h3>
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Win your neighbourhood. Show up in the map pack, drive walk-ins, and own your local market.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;">
+          <span class="chip chip-sage">Google Business</span>
+          <span class="chip chip-sage">Map Pack</span>
+          <span class="chip chip-sage">Citations</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div class="lrow"><div class="ldot ldot-sage"></div>GMB optimization</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>NAP citations</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>Local keywords</div>
+          <div class="lrow"><div class="ldot ldot-sage"></div>Review strategy</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Service CTA -->
+    <div class="reveal" style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
+      <a href="#contact" class="btn-terra">Start With a Free Audit →</a>
+      <a href="#process" class="btn-outline">How I Work</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider" style="margin:0 28px;"></div>
+
+<!-- ======= PROCESS ======= -->
+<section id="process" style="background:var(--cream);padding:80px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;">
+
+    <div class="reveal" style="margin-bottom:52px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;" class="two-col">
+      <div>
+        <div class="stag-sage">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          My Process
+        </div>
+        <h2 style="font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:700;color:var(--text-dark);letter-spacing:-0.02em;margin-bottom:12px;">
+          Transparent from<br><em style="color:var(--sage);">day one.</em>
+        </h2>
+        <p style="color:var(--text-mid);line-height:1.75;">You'll always know what I'm doing, why I'm doing it, and what results to expect.</p>
+      </div>
+      <div style="background:var(--sand);border-radius:16px;padding:20px 24px;">
+        <div style="font-size:12px;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);font-weight:600;margin-bottom:12px;">Timeline Snapshot</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="font-size:11px;color:var(--text-muted);width:56px;font-weight:600;">Week 1</div>
+            <div style="flex:1;height:6px;background:rgba(92,61,46,0.1);border-radius:3px;overflow:hidden;"><div style="width:100%;height:100%;background:var(--terracotta);border-radius:3px;"></div></div>
+            <div style="font-size:11px;color:var(--text-mid);font-weight:500;">Audit</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="font-size:11px;color:var(--text-muted);width:56px;font-weight:600;">Week 2</div>
+            <div style="flex:1;height:6px;background:rgba(92,61,46,0.1);border-radius:3px;overflow:hidden;"><div style="width:80%;height:100%;background:var(--terracotta-light);border-radius:3px;"></div></div>
+            <div style="font-size:11px;color:var(--text-mid);font-weight:500;">Strategy</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="font-size:11px;color:var(--text-muted);width:56px;font-weight:600;">Month 2</div>
+            <div style="flex:1;height:6px;background:rgba(92,61,46,0.1);border-radius:3px;overflow:hidden;"><div style="width:65%;height:100%;background:var(--sage-light);border-radius:3px;"></div></div>
+            <div style="font-size:11px;color:var(--text-mid);font-weight:500;">Execute</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="font-size:11px;color:var(--text-muted);width:56px;font-weight:600;">Month 3+</div>
+            <div style="flex:1;height:6px;background:rgba(92,61,46,0.1);border-radius:3px;overflow:hidden;"><div style="width:50%;height:100%;background:var(--sage);border-radius:3px;"></div></div>
+            <div style="font-size:11px;color:var(--text-mid);font-weight:500;">Results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;" class="two-col">
+      <div class="pill-step reveal" style="transition-delay:0.04s;">
+        <div class="step-badge">01</div>
+        <div>
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Discovery & Deep Audit</h4>
+          <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">I dig into your site, competitors and keyword landscape — no template reports, just insights that matter to <em>your</em> business.</p>
+        </div>
+      </div>
+      <div class="pill-step reveal" style="transition-delay:0.08s;">
+        <div class="step-badge">02</div>
+        <div>
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Custom Strategy & Roadmap</h4>
+          <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">A clear, prioritised 90-day plan — keyword targets, content calendar, technical fixes, and authority-building actions.</p>
+        </div>
+      </div>
+      <div class="pill-step reveal" style="transition-delay:0.12s;">
+        <div class="step-badge">03</div>
+        <div>
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Hands-On Execution</h4>
+          <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">I don't just advise — I do the work. Technical fixes, content optimisation, link outreach, all handled with care.</p>
+        </div>
+      </div>
+      <div class="pill-step reveal" style="transition-delay:0.16s;">
+        <div class="step-badge">04</div>
+        <div>
+          <h4 style="font-size:1rem;font-weight:700;color:var(--text-dark);margin-bottom:6px;">Report, Refine & Scale</h4>
+          <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Monthly plain-English reports with real numbers. Ongoing iteration based on what's working — compounding results over time.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- warm bg transition -->
+<div style="background:var(--sand);">
+  <div style="height:2px;background:linear-gradient(90deg,transparent,rgba(92,61,46,0.1),transparent);"></div>
+</div>
+
+<!-- ======= CLIENT STORIES ======= -->
+<section id="stories" style="background:var(--sand);padding:80px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;">
+
+    <div class="reveal" style="margin-bottom:52px;">
+      <div class="stag">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        Client Stories
+      </div>
+      <h2 style="font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:700;color:var(--text-dark);letter-spacing:-0.02em;margin-bottom:10px;">
+        People I've helped <em style="color:var(--terracotta);">grow.</em>
+      </h2>
+      <p style="color:var(--text-mid);line-height:1.75;max-width:480px;">Real businesses, real results — from local shops to SaaS platforms.</p>
+    </div>
+
+    <div class="three-col" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+
+      <div class="qcard reveal" style="transition-delay:0.04s;">
+        <div style="padding-top:28px;">
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:20px;font-style:italic;">Abibunisha grew our organic traffic by 4× in five months. Our main keywords went from page 4 to the top 3. She genuinely cares about the results.</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--terracotta),var(--terracotta-light));display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:white;font-size:15px;">R</div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:var(--text-dark);">Ravi M.</div>
+              <div style="font-size:12px;color:var(--text-muted);">E-commerce Founder</div>
+            </div>
+            <div style="margin-left:auto;color:#f59e0b;font-size:13px;">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qcard reveal" style="transition-delay:0.08s;">
+        <div style="padding-top:28px;">
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:20px;font-style:italic;">We now show up in the Google Maps top 3 for all our services. Patient, transparent, and the results speak for themselves. Bookings doubled!</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--sage),var(--sage-light));display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:white;font-size:15px;">S</div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:var(--text-dark);">Sunitha K.</div>
+              <div style="font-size:12px;color:var(--text-muted);">Clinic Owner, Chennai</div>
+            </div>
+            <div style="margin-left:auto;color:#f59e0b;font-size:13px;">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="qcard reveal" style="transition-delay:0.12s;">
+        <div style="padding-top:28px;">
+          <p style="font-size:0.9rem;color:var(--text-mid);line-height:1.8;margin-bottom:20px;font-style:italic;">The monthly reports are clear and the results are undeniable. 12 competitive keywords on page 1. Abi doesn't just do SEO — she teaches you along the way.</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#c4622d,#e07a50);display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-weight:700;color:white;font-size:15px;">A</div>
+            <div>
+              <div style="font-weight:700;font-size:14px;color:var(--text-dark);">Arjun T.</div>
+              <div style="font-size:12px;color:var(--text-muted);">SaaS Product Lead</div>
+            </div>
+            <div style="margin-left:auto;color:#f59e0b;font-size:13px;">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Brands / Tools -->
+    <div class="reveal" style="margin-top:56px;">
+      <div style="text-align:center;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);font-weight:600;margin-bottom:22px;">Tools I work with every day</div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Google Search Console
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          Ahrefs
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+          SEMrush
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          GA4
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          Screaming Frog
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+          Moz Pro
+        </div>
+        <div class="tpill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--terracotta)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Surfer SEO
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======= CTA ======= -->
+<section id="contact" class="cta-section" style="padding:96px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;position:relative;z-index:10;">
+    <div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;" class="two-col">
+
+      <!-- Left -->
+      <div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.75);font-size:13px;font-weight:600;padding:7px 18px;border-radius:50px;border:1px solid rgba(255,255,255,0.15);margin-bottom:24px;">
+          🌿 Free — No Commitment
+        </div>
+        <h2 style="font-family:'Lora',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.12;letter-spacing:-0.025em;margin-bottom:16px;">
+          Let's find out<br>why you're not<br><em style="color:var(--terracotta-light);">ranking yet.</em>
+        </h2>
+        <p style="color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.8;margin-bottom:32px;font-weight:300;">
+          I'll audit your website for free — no strings attached. You'll walk away with a clear picture of what's holding you back and exactly what to fix.
         </p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="mailto:abibunisha@email.com" class="btn-terra" style="background:var(--terracotta-light);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Request Free Audit
+          </a>
+          <a href="https://www.linkedin.com/in/abibunisha/" target="_blank" class="btn-outline" style="color:rgba(255,255,255,0.75);border-color:rgba(255,255,255,0.25);" onmouseover="this.style.borderColor='rgba(255,255,255,0.6)';this.style.color='white';" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)';this.style.color='rgba(255,255,255,0.75)';">
+            LinkedIn →
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: mini trust card grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px;text-align:center;">
+          <div style="font-family:'Lora',serif;font-size:2rem;font-weight:700;color:var(--terracotta-light);margin-bottom:6px;">24h</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;">Response Time</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px;text-align:center;">
+          <div style="font-family:'Lora',serif;font-size:2rem;font-weight:700;color:var(--terracotta-light);margin-bottom:6px;">Free</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;">SEO Audit</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px;text-align:center;">
+          <div style="font-family:'Lora',serif;font-size:2rem;font-weight:700;color:#86efac;margin-bottom:6px;">100%</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;">White-Hat Only</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:22px;text-align:center;">
+          <div style="font-family:'Lora',serif;font-size:2rem;font-weight:700;color:#86efac;margin-bottom:6px;">No</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.45);font-weight:500;">Lock-in Contracts</div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- Portfolio -->
-<section class="py-20 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-12">SEO Services Portfolio</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-gray-800 p-8 rounded-2xl">
-        <h3 class="font-semibold mb-3">Ranking Improvements</h3>
-        <p class="text-gray-400">Delivered measurable ranking growth using advanced SEO services strategies.</p>
-      </div>
-
-      <div class="bg-gray-800 p-8 rounded-2xl">
-        <h3 class="font-semibold mb-3">Traffic Growth</h3>
-        <p class="text-gray-400">Improved organic traffic through structured website SEO services implementation.</p>
-      </div>
-
-      <div class="bg-gray-800 p-8 rounded-2xl">
-        <h3 class="font-semibold mb-3">Lead Generation</h3>
-        <p class="text-gray-400">Optimized landing pages with conversion-focused SEO services techniques.</p>
-      </div>
-
+<!-- ======= FOOTER ======= -->
+<footer style="background:#2c1f14;border-top:1px solid rgba(255,255,255,0.05);padding:28px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;">
+    <div style="font-family:'Lora',serif;font-weight:700;font-size:18px;color:white;">
+      Abibunisha<span style="color:var(--terracotta-light);">.</span>
+      <span style="font-size:13px;font-weight:400;color:rgba(255,255,255,0.28);font-family:'Plus Jakarta Sans',sans-serif;margin-left:10px;">SEO Strategist</span>
+    </div>
+    <div style="color:rgba(255,255,255,0.2);font-size:12px;">© 2026 Abibunisha. All rights reserved.</div>
+    <div style="display:flex;gap:18px;">
+      <a href="https://www.linkedin.com/in/abibunisha/" style="color:rgba(255,255,255,0.25);transition:color 0.2s;" onmouseover="this.style.color='#e07a50'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="mailto:abibunisha@email.com" style="color:rgba(255,255,255,0.25);transition:color 0.2s;" onmouseover="this.style.color='#e07a50'" onmouseout="this.style.color='rgba(255,255,255,0.25)'">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </a>
     </div>
   </div>
-</section>
-
-<!-- Pricing -->
-<!-- Pricing -->
-<section class="py-24 bg-gray-900 px-6">
-  <div class="max-w-7xl mx-auto text-center">
-    
-    <h2 class="text-4xl font-bold mb-6">
-      Transparent SEO Services Pricing
-    </h2>
-    
-    <p class="text-gray-400 max-w-3xl mx-auto mb-16">
-      Our professional SEO services are designed for startups, growing businesses, and 
-      established brands. From foundational website SEO services to advanced on-page 
-      and technical SEO services, choose the plan that fits your growth stage.
-    </p>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <!-- Starter -->
-      <div class="bg-gray-800 p-10 rounded-3xl border border-gray-700 hover:border-indigo-500 transition shadow-lg">
-        <h3 class="text-2xl font-semibold mb-4">Starter SEO</h3>
-        <p class="text-4xl font-extrabold mb-6">$399</p>
-
-        <ul class="space-y-4 text-gray-400 mb-8 text-left">
-          <li>✔ Basic Website SEO Audit</li>
-          <li>✔ Keyword Research (Up to 25 Keywords)</li>
-          <li>✔ Meta Tags Optimization</li>
-          <li>✔ Basic On-Page SEO Services</li>
-          <li>✔ 2 Weeks Email Support</li>
-        </ul>
-
-        <a href="https://www.linkedin.com/in/abibunisha-s-5b3796310/" target="_blank"
-           class="block bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-xl transition">
-           Get Started
-        </a>
-      </div>
-
-      <!-- Professional (Highlighted) -->
-      <div class="bg-indigo-600 p-10 rounded-3xl shadow-2xl scale-105">
-        <h3 class="text-2xl font-semibold mb-4 text-white">
-          On-Page + Technical SEO
-        </h3>
-        <p class="text-4xl font-extrabold mb-6 text-white">
-          Starting at $799
-        </p>
-
-        <ul class="space-y-4 mb-8 text-left text-white">
-          <li>✔ Full Technical SEO Audit</li>
-          <li>✔ Complete On-Page SEO Optimization</li>
-          <li>✔ Core Web Vitals Optimization</li>
-          <li>✔ Site Structure & Internal Linking</li>
-          <li>✔ Schema Markup Implementation</li>
-          <li>✔ Indexing & Crawl Fixes</li>
-          <li>✔ 30 Days Performance Monitoring</li>
-        </ul>
-
-        <a href="https://www.linkedin.com/in/abibunisha-s-5b3796310/" target="_blank"
-           class="block bg-white text-indigo-600 font-semibold py-3 rounded-xl hover:opacity-90 transition">
-           Book Technical SEO
-        </a>
-      </div>
-
-      <!-- Growth -->
-      <div class="bg-gray-800 p-10 rounded-3xl border border-gray-700 hover:border-indigo-500 transition shadow-lg">
-        <h3 class="text-2xl font-semibold mb-4">Growth SEO Services</h3>
-        <p class="text-4xl font-extrabold mb-6">$1,499+</p>
-
-        <ul class="space-y-4 text-gray-400 mb-8 text-left">
-          <li>✔ Advanced Technical SEO Services</li>
-          <li>✔ Competitor SEO Analysis</li>
-          <li>✔ Content Optimization Strategy</li>
-          <li>✔ Conversion-Focused SEO Services</li>
-          <li>✔ Monthly Reporting & Tracking</li>
-          <li>✔ Ongoing SEO Retainer</li>
-        </ul>
-
-        <a href="https://www.linkedin.com/in/abibunisha-s-5b3796310/" target="_blank"
-           class="block bg-gray-700 hover:bg-gray-600 text-white py-3 rounded-xl transition">
-           Scale My SEO
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Qualifications -->
-<section class="py-20 px-6">
-  <div class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold mb-8">Qualifications & Certifications</h2>
-    <p class="text-gray-400 max-w-3xl mx-auto">
-      Experienced in professional SEO services including technical SEO services, on-page SEO services, 
-      and digital growth strategy implementation. Certified in SEO fundamentals and digital marketing.
-    </p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="py-20 bg-indigo-600 text-center px-6">
-  <h2 class="text-3xl font-bold text-white mb-6">
-    Ready to Scale with Professional SEO Services?
-  </h2>
-  <a href="https://www.linkedin.com/in/abibunisha-seo/" target="_blank"
-     class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-semibold text-lg hover:opacity-90 transition">
-     Start Your SEO Growth
-  </a>
-</section>
-
-<!-- Footer -->
-<footer class="py-10 text-center text-gray-500 text-sm bg-gray-950 border-t border-gray-800">
-  © 2026 Abibunisha S | Professional SEO Services Company
 </footer>
 
+<script>
+  // Navbar scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Entry animations
+  const entries = document.querySelectorAll('.a1,.a2,.a3,.a4,.a5');
+  entries.forEach((el, i) => {
+    el.style.cssText += `opacity:0;transform:translateY(30px);transition:opacity 0.7s ${i*0.12}s ease,transform 0.7s ${i*0.12}s ease;`;
+  });
+  window.addEventListener('load', () => {
+    entries.forEach(el => { el.style.opacity = 1; el.style.transform = 'translateY(0)'; });
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const delay = parseFloat(e.target.style.transitionDelay) || 0;
+        setTimeout(() => e.target.classList.add('in'), delay * 1000);
+        ro.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => ro.observe(el));
+
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
 </body>
 </html>
